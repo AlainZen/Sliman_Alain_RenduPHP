@@ -1,0 +1,13 @@
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    pseudo VARCHAR(32) NOT NULL,
+    email VARCHAR(256) NOT NULL,
+    password VARCHAR(256) NOT NULL
+);
+
+CREATE TABLE tweets (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    author_id VARCHAR(32) NOT NULL,
+    messages VARCHAR(255) NOT NULL,
+    FOREIGN KEY (author_id) REFERENCES users(id) ON DELETE CASCADE
+);
